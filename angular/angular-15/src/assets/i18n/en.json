@@ -1,0 +1,12 @@
+{
+	"h": {
+		"h": "Home Page",
+		"l": "Language",
+		"ab": "About Page",
+		"notfound": {
+			"tooltip": "Not Found Page",
+			"page": "404, Page Not Found!"
+		}
+	},
+	"themes": "Themes"
+}

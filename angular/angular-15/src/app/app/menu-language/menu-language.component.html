@@ -1,0 +1,6 @@
+<ng-container *ngIf="langs.length>1">
+    <p-button icon="pi pi-language" [pTooltip]="i18n.main.language| translate" (click)="menu.toggle($event)">
+    </p-button>
+
+    <p-menu #menu [popup]="true" [model]="langs"></p-menu>
+</ng-container>
