@@ -1,1 +1,12 @@
-<p>about works!</p>
+<div class="flex flex-column gap-3">
+    <div></div>
+    <p-card>
+        <div [innerHTML]="i18nAB.content|translate"></div>
+    </p-card>
+    <p-card header="LICENSE" *ngIf="selfLicenses!=''">
+        <pre>{{selfLicenses}}</pre>
+    </p-card>
+    <p-card header="3rdpartylicenses.txt" *ngIf="licenses!=''">
+        <pre>{{licenses}}</pre>
+    </p-card>
+</div>

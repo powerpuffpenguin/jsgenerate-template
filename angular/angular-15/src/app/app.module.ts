@@ -16,7 +16,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LocationStrategy } from '@angular/common';
 import { MenuModule } from 'primeng/menu';
-
+import { CardModule } from 'primeng/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -54,7 +54,7 @@ export function HttpLoaderFactory(http: HttpClient, locationStrategy: LocationSt
       }
     }),
     ToolbarModule, ButtonModule, SidebarModule, TooltipModule,
-    MessagesModule, MessageModule, MenuModule,
+    MessagesModule, MessageModule, MenuModule, CardModule,
     AppRoutingModule
   ],
   providers: [],

@@ -8,6 +8,6 @@ import { i18n } from 'src/internal/i18n';
   styleUrls: ['./not-found.component.scss']
 })
 export class NotFoundComponent {
-  i18n = i18n
+  i18nG = i18n.general
   constructor(readonly router: Router) { }
 }

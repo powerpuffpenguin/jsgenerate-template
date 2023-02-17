@@ -10,7 +10,7 @@ import { i18n } from 'src/internal/i18n';
   styleUrls: ['./menu-language.component.scss']
 })
 export class MenuLanguageComponent {
-  i18n = i18n
+  i18nG = i18n.general
   langs: MenuItem[]
   constructor(private readonly settingsService: SettingsService,
     private readonly translateService: TranslateService,

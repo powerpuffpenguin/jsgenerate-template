@@ -99,7 +99,7 @@ if [[ $serve == 1 ]];then
 fi
 
 if [[ $i18n == 1 ]];then
-    node i18n/i18n.js
+    node i18n/i18n.js -f yaml -a
     if [[ $build == 1 ]];then
         ng build
         exit 0

@@ -1,0 +1,43 @@
+# 這裏包含一些比較通用的常規內容
+g:
+  # 這是項目的主標題，將作爲默認標題顯示在瀏覽器的標題欄上
+  t: 主頁
+  # 到主頁面的導航提示文本
+  # Home Page
+  # 主頁
+  hp: 主頁
+  # 到關於頁面的導航提示文本
+  # About Page
+  # 關於
+  ap: 關於
+  # 主題選擇的按鈕文本
+  # Themes
+  # 主題
+  ts: 主題
+  # 語言選擇按鈕文本
+  # Languages
+  # 語言
+  ls: 語言
+  # 404頁面提示信息
+  # Not Found: {{url}}
+  # 頁面未找到: {{url}}
+  npf: '頁面未找到: {{url}}'
+# 關於頁面
+ab:
+  # 標題
+  # About
+  # 關於
+  t: 關於
+  # 關於頁面顯示的文本內容
+  c: >-
+    <p>這是使用 <a target="_blank"
+    href="https://github.com/powerpuffpenguin/jsgenerate-template">jsgenerate</a>
+    生成的一個項目，它使用了 <a target="_blank"
+    href="https://github.com/powerpuffpenguin/jsgenerate-template">jsgenerate-template</a>
+    提供的模板</p>
+  
+    <p><a target="_blank"
+    href="https://github.com/powerpuffpenguin/jsgenerate-template">jsgenerate</a>
+    是一個用於自動生成程序代碼的 node 工具，<a target="_blank"
+    href="https://github.com/powerpuffpenguin/jsgenerate-template">jsgenerate-template</a>
+    是官方提供的一些模板案例</p>

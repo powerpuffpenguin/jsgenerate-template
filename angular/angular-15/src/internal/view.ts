@@ -1,4 +1,4 @@
-import { Completer } from "./async";
+import { Completer } from "@king011/easyts/es/es6/async";
 
 export enum State {
     none = "none",

@@ -5,6 +5,7 @@ import { SettingsService } from './core/settings.service';
 import { TranslateService } from '@ngx-translate/core';
 import { i18n } from 'src/internal/i18n';
 import { ViewState } from 'src/internal/view';
+import { TitleService } from './core/title.service';
 
 @Component({
   selector: 'app-root',
@@ -12,18 +13,28 @@ import { ViewState } from 'src/internal/view';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  i18n = i18n
+  i18nG = i18n.general
+
   view = new ViewState<void>()
   constructor(private primengConfig: PrimeNGConfig,
     private readonly settingsService: SettingsService,
     private readonly sanitizer: DomSanitizer,
     translateService: TranslateService,
+    titleService: TitleService
   ) {
     this.theme = this.sanitizer.bypassSecurityTrustResourceUrl(`assets/themes/${settingsService.theme.value}/theme.css`)
     translateService.use(settingsService.lang.value)
     this.view.loader = async () => {
-      new Promise((resove, reject) => {
-        translateService.get('home').subscribe(resove)
+      new Promise<void>((resove) => {
+        let first = true
+        translateService.stream(i18n.general.title).subscribe((val) => {
+          titleService.defaultTitle = val
+          if (first) {
+            titleService.set(val)
+            first = false
+          }
+          resove()
+        })
       })
     }
   }
