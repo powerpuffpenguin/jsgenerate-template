@@ -50,10 +50,16 @@
       <div class="p-toolbar-group-start gap-2">
 
         <a routerLink="/">
-          <p-button icon="pi pi-home" [pTooltip]="i18nG.home |translate"></p-button>
+          <p-button icon="pi mi-outlined-home" [pTooltip]="i18nG.home |translate"></p-button>
+        </a>
+
+        <!-- dev -->
+        <a routerLink="/dev" *ngIf="!env.production">
+          <p-button icon="pi mi-outlined-api" pTooltip="Dev Page">
+          </p-button>
         </a>
         <a routerLink="/404">
-          <p-button icon="pi pi-times" pTooltip="404 Page" styleClass="p-button-danger">
+          <p-button icon="pi mi-outlined-highlight_off" pTooltip="404 Page" styleClass="p-button-danger">
           </p-button>
         </a>
 
@@ -62,10 +68,11 @@
       <!-- p-toolbar-group-end 指定工具欄結束位置 -->
       <div class="p-toolbar-group-end gap-2">
         <a routerLink="/about">
-          <p-button icon="pi pi-info" [pTooltip]="i18nG.about|translate"></p-button>
+          <p-button icon="pi mi-outlined-info iconsize" [pTooltip]="i18nG.about|translate"></p-button>
         </a>
 
-        <p-button icon="pi pi-cog" [pTooltip]="i18nG.themes| translate" (onClick)="themeSidebar=!themeSidebar">
+        <p-button icon="pi mi-outlined-style" [pTooltip]="i18nG.themes| translate"
+          (onClick)="themeSidebar=!themeSidebar">
         </p-button>
         <app-menu-language></app-menu-language>
       </div>

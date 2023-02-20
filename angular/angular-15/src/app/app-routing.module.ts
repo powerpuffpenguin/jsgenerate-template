@@ -14,6 +14,10 @@ const routes: Routes = [
     component: AboutComponent,
   },
   {
+    path: 'dev',
+    loadChildren: () => import('./dev/dev.module').then(m => m.DevModule),
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   }

@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { i18n } from 'src/internal/i18n';
 import { ViewState } from 'src/internal/view';
 import { TitleService } from './core/title.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import { TitleService } from './core/title.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  env = environment
   i18nG = i18n.general
 
   view = new ViewState<void>()
