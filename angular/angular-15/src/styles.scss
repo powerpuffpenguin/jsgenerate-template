@@ -48,24 +48,10 @@
 
 @import "primeflex/primeflex.css";
 
-// 定義要使用圖標名稱
-$material-icons: (
-    home,
-    api,
-    info,
-    style,
-    language,
-    highlight_off,
-);
 // 使用 mi 作爲 class 前綴
 // mi-home
-// mi-outlined-home
-// mi-round-home
-// mi-sharp-home
-// mi-two-tone-home
+// mi-star
 $material-icons-css-prefix: mi;
-// 導入 material-icons 字體定義
-@import 'material-icons/iconfont/material-icons.css';
 
 // @see https://github.com/twbs/bootstrap/blob/main/scss/_functions.scss
 @function material-icons-str-replace($string, $search, $replace: '') {
@@ -80,23 +66,31 @@ $material-icons-css-prefix: mi;
     @return $string;
 }
 
-// 使用這個 mixin 來創建 icon class
-@mixin material-icon($icon, $font-family) {
-    font-family: $font-family ;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-smoothing: antialiased; // Support for all WebKit browsers
-    -moz-osx-font-smoothing: grayscale; // Support for Firefox
-    text-rendering: optimizeLegibility; // Support for Safari and Chrome
-    font-feature-settings: 'liga'; // Support for IE
+// 創建 material-icons 字體
+// material-icons
+// material-icons-outlined
+// material-icons-round
+// material-icons-sharp
+// material-icons-two-tone 
+@import 'material-icons/iconfont/material-icons.css';
+// 調整字體單位爲 rem
+@each $font-family in ('Material Icons',
+    'Material Icons Outlined',
+    'Material Icons Round',
+    'Material Icons Sharp',
+    'Material Icons Two Tone'
 
+) {
+    $full-class-name: to-lower-case($font-family);
+    $class-name: material-icons-str-replace($full-class-name, ' ', '-');
+
+    .#{$class-name} {
+        font-size: 1.5rem;
+    }
+}
+
+// 使用這個 mixin 來創建 icon class
+@mixin material-icon($icon) {
     &::before {
         content: $icon;
     }
@@ -106,31 +100,16 @@ $material-icons-css-prefix: mi;
 @import 'material-icons/css/_codepoints.scss';
 
 // 這裏設置要創建的字體風格
-@each $font-family in ('Material Icons',
-    'Material Icons Outlined',
-    // 'Material Icons Round',
-    // 'Material Icons Sharp',
-    // 'Material Icons Two Tone'
-) {
-    $full-class-name: to-lower-case($font-family);
-    $full-class-name: material-icons-str-replace($full-class-name, ' ', '-');
-    $class-name: material-icons-str-replace($full-class-name,
-        'material-icons',
-        $material-icons-css-prefix);
-
-    // 設置要創建的 class
-    @each $name in $material-icons {
-        .#{$class-name}-#{$name} {
-            @include material-icon("#{$name}", "#{$font-family}");
-        }
-
-        .p-component {
-            .#{$class-name}-#{$name} {
-                font-size: 1.5rem !important;
-            }
-        }
+// 設置要創建的 class
+@each $name,
+$codepoint in $material-icons-codepoints {
+    .#{$material-icons-css-prefix}-#{$name} {
+        @include material-icon("#{$name}");
     }
 }
+
+// 導入 fontawesome 字體 和 class
+@import "@fortawesome/fontawesome-free/css/all.css";
 
 /* 主題相關 */
 
