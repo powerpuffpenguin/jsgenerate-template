@@ -12,3 +12,14 @@ img {
 img:hover {
     transform: scale(1.1);
 }
+
+svg {
+    width: 58px;
+    height: 58px;
+    transition-duration: 100ms;
+    transition-timing-function: linear;
+}
+
+svg:hover {
+    transform: scale(1.1);
+}

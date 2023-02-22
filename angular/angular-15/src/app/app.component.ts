@@ -68,7 +68,7 @@ const Themes: Array<{
   values?: Array<{
     value: string
     label: string
-    src?: string
+    svg?: string
   }>
 }> = [
     {
@@ -77,22 +77,18 @@ const Themes: Array<{
         {
           label: 'Blue',
           value: 'bootstrap4-light-blue',
-          src: 'assets/images/themes/bootstrap4-light-blue.svg',
         },
         {
           label: 'Purple',
           value: 'bootstrap4-light-purple',
-          src: 'assets/images/themes/bootstrap4-light-purple.svg',
         },
         {
           label: 'Blue',
           value: 'bootstrap4-dark-blue',
-          src: 'assets/images/themes/bootstrap4-dark-blue.svg',
         },
         {
           label: 'Purple',
           value: 'bootstrap4-dark-purple',
-          src: 'assets/images/themes/bootstrap4-dark-purple.svg',
         },
       ],
     },
@@ -102,22 +98,18 @@ const Themes: Array<{
         {
           label: 'Indigo',
           value: 'md-light-indigo',
-          src: 'assets/images/themes/md-light-indigo.svg',
         },
         {
           label: 'Deep Purple',
           value: 'md-light-deeppurple',
-          src: 'assets/images/themes/md-light-deeppurple.svg',
         },
         {
           label: 'Indigo',
           value: 'md-dark-indigo',
-          src: 'assets/images/themes/md-dark-indigo.svg',
         },
         {
           label: 'Deep Purple',
           value: 'md-dark-deeppurple',
-          src: 'assets/images/themes/md-dark-deeppurple.svg',
         },
       ],
     },
@@ -127,22 +119,22 @@ const Themes: Array<{
         {
           label: 'Indigo',
           value: 'mdc-light-indigo',
-          src: 'assets/images/themes/md-light-indigo.svg',
+          svg: 'md-light-indigo',
         },
         {
           label: 'Deep Purple',
           value: 'mdc-light-deeppurple',
-          src: 'assets/images/themes/md-light-deeppurple.svg',
+          svg: 'md-light-deeppurple',
         },
         {
           label: 'Indigo',
           value: 'mdc-dark-indigo',
-          src: 'assets/images/themes/md-dark-indigo.svg',
+          svg: 'md-dark-indigo',
         },
         {
           label: 'Deep Purple',
           value: 'mdc-dark-deeppurple',
-          src: 'assets/images/themes/md-dark-deeppurple.svg',
+          svg: 'md-dark-deeppurple',
         },
       ],
     },
@@ -152,7 +144,6 @@ const Themes: Array<{
         {
           label: 'Tailwind Light',
           value: 'tailwind-light',
-          src: 'assets/images/themes/tailwind-light.png',
         },
       ],
     },
@@ -162,7 +153,6 @@ const Themes: Array<{
         {
           label: 'Fluent Light',
           value: 'fluent-light',
-          src: 'assets/images/themes/fluent-light.png',
         },
       ],
     },
@@ -172,42 +162,34 @@ const Themes: Array<{
         {
           label: 'Lara Light Indigo',
           value: 'lara-light-indigo',
-          src: 'assets/images/themes/lara-light-indigo.png',
         },
         {
           label: 'Lara Dark Indigo',
           value: 'lara-dark-indigo',
-          src: 'assets/images/themes/lara-dark-indigo.png',
         },
         {
           label: 'Lara Light Purple',
           value: 'lara-light-purple',
-          src: 'assets/images/themes/lara-light-purple.png',
         },
         {
           label: 'Lara Dark Purple',
           value: 'lara-dark-purple',
-          src: 'assets/images/themes/lara-dark-purple.png',
         },
         {
           label: 'Lara Light Blue',
           value: 'lara-light-blue',
-          src: 'assets/images/themes/lara-light-blue.png',
         },
         {
           label: 'Lara Dark Blue',
           value: 'lara-dark-blue',
-          src: 'assets/images/themes/lara-dark-blue.png',
         },
         {
           label: 'Lara Light Teal',
           value: 'lara-light-teal',
-          src: 'assets/images/themes/lara-light-teal.png',
         },
         {
           label: 'Lara Dark Teal',
           value: 'lara-dark-teal',
-          src: 'assets/images/themes/lara-dark-teal.png',
         },
       ],
     },
@@ -217,63 +199,51 @@ const Themes: Array<{
         {
           label: 'Saga Blue',
           value: 'saga-blue',
-          src: 'assets/images/themes/saga-blue.png',
         },
         {
           label: 'Saga Green',
           value: 'saga-green',
-          src: 'assets/images/themes/saga-green.png',
         },
         {
           label: 'Saga Orange',
           value: 'saga-orange',
-          src: 'assets/images/themes/saga-orange.png',
         },
         {
           label: 'Saga Purple',
           value: 'saga-purple',
-          src: 'assets/images/themes/saga-purple.png',
         },
         {
           label: 'vela blue',
           value: 'vela-blue',
-          src: 'assets/images/themes/vela-blue.png',
         },
         {
           label: 'vela green',
           value: 'vela-green',
-          src: 'assets/images/themes/vela-green.png',
         },
         {
           label: 'vela orange',
           value: 'vela-orange',
-          src: 'assets/images/themes/vela-orange.png',
         },
         {
           label: 'vela purple',
           value: 'vela-purple',
-          src: 'assets/images/themes/vela-purple.png',
         },
 
         {
           label: 'Arya Blue',
           value: 'arya-blue',
-          src: 'assets/images/themes/arya-blue.png',
         },
         {
           label: 'Arya Green',
           value: 'arya-green',
-          src: 'assets/images/themes/arya-green.png',
         },
         {
           label: 'Arya Orange',
           value: 'arya-orange',
-          src: 'assets/images/themes/arya-orange.png',
         },
         {
           label: 'Arya Purple',
           value: 'arya-purple',
-          src: 'assets/images/themes/arya-purple.png',
         },
       ],
     },
@@ -283,17 +253,14 @@ const Themes: Array<{
         {
           label: 'Nova',
           value: 'nova',
-          src: 'assets/images/themes/nova.png',
         },
         {
           label: 'Nova Alt',
           value: 'nova-alt',
-          src: 'assets/images/themes/nova-alt.png',
         },
         {
           label: 'Nova Accent',
           value: 'nova-accent',
-          src: 'assets/images/themes/nova-accent.png',
         },
         {
           label: '',
@@ -302,27 +269,22 @@ const Themes: Array<{
         {
           label: 'Luna Amber',
           value: 'luna-amber',
-          src: 'assets/images/themes/luna-amber.png',
         },
         {
           label: 'Luna Blue',
           value: 'luna-blue',
-          src: 'assets/images/themes/luna-blue.png',
         },
         {
           label: 'Luna Green',
           value: 'luna-green',
-          src: 'assets/images/themes/luna-green.png',
         },
         {
           label: 'Luna Pink',
           value: 'luna-pink',
-          src: 'assets/images/themes/luna-pink.png',
         },
         {
           label: 'Rhea',
           value: 'rhea',
-          src: 'assets/images/themes/rhea.png',
         },
       ],
     },

@@ -7,13 +7,22 @@
     <h4>{{theme.title}}</h4>
     <div class="grid">
       <div *ngFor="let val of theme.values" class="col-3 flex flex-column gap-2">
-        <ng-container *ngIf="val.src">
+        <ng-container *ngIf="val.value">
           <div class="relative">
             <p-button class="flex justify-content-center" styleClass="p-button-link" (onClick)="onClickTheme(val.value)"
               [ariaLabel]="val.value">
-              <img [src]="val.src" style="width: 58px;">
+              <ng-container *ngIf="val.svg then svgView;else imgView"></ng-container>
+              <ng-template #svgView>
+                <svg>
+                  <use [attr.xlink:href]="'/assets/images/themes.svg#'+val.svg" />
+                </svg>
+              </ng-template>
+              <ng-template #imgView>
+                <svg>
+                  <use [attr.xlink:href]="'/assets/images/themes.svg#'+val.value" />
+                </svg>
+              </ng-template>
             </p-button>
-
             <i class="text-primary text-xl pi pi-check-circle absolute top-0 right-0" *ngIf="isTheme(val.value)"></i>
           </div>
           <div class="flex justify-content-center" style="font-size: 14px;">{{val.label}}</div>
@@ -22,6 +31,7 @@
     </div>
   </div>
 </p-sidebar>
+
 
 <div class="view" [ngSwitch]="view.state">
   <ng-template ngSwitchCase="load">
