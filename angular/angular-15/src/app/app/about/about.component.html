@@ -4,9 +4,9 @@
         <div [innerHTML]="i18nAB.content|translate"></div>
     </p-card>
     <p-card header="LICENSE" *ngIf="selfLicenses!=''">
-        <pre>{{selfLicenses}}</pre>
+        <pre class="overflow-x-auto">{{selfLicenses}}</pre>
     </p-card>
     <p-card header="3rdpartylicenses.txt" *ngIf="licenses!=''">
-        <pre>{{licenses}}</pre>
+        <pre class="overflow-x-auto">{{licenses}}</pre>
     </p-card>
 </div>
