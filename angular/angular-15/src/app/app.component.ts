@@ -7,13 +7,16 @@ import { i18n } from 'src/internal/i18n';
 import { ViewState } from 'src/internal/view';
 import { TitleService } from './core/title.service';
 import { environment } from 'src/environments/environment';
+import { BaseComponent } from 'src/internal/base-component';
+import { SessionService } from './core/session/session.service';
+import { Session } from './core/session/session';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent extends BaseComponent {
   env = environment
   i18nG = i18n.general
 
@@ -21,9 +24,11 @@ export class AppComponent {
   constructor(private primengConfig: PrimeNGConfig,
     private readonly settingsService: SettingsService,
     private readonly sanitizer: DomSanitizer,
+    private readonly sessionService: SessionService,
     translateService: TranslateService,
     titleService: TitleService
   ) {
+    super()
     this.theme = this.sanitizer.bypassSecurityTrustResourceUrl(`assets/themes/${settingsService.theme.value}/theme.css`)
     translateService.use(settingsService.lang.value)
     this.view.loader = async () => {
@@ -40,11 +45,17 @@ export class AppComponent {
       })
     }
   }
-
+  session: undefined | Session
   ngOnInit() {
     this.primengConfig.ripple = true;
     // 執行初始化
     this.view.get()
+
+    this.sessionService.stream.pipe(
+      this.takeUntilClosed()
+    ).subscribe((session) => {
+      this.session = session
+    })
   }
   theme: SafeResourceUrl
   themeSidebar = false // 主題側邊欄
@@ -157,38 +168,38 @@ const Themes: Array<{
       ],
     },
     {
-      title: 'PrimeOne Design',
+      title: 'PrimeOne Design - Lara',
       values: [
         {
-          label: 'Lara Light Indigo',
+          label: 'Light Indigo',
           value: 'lara-light-indigo',
         },
         {
-          label: 'Lara Dark Indigo',
+          label: 'Dark Indigo',
           value: 'lara-dark-indigo',
         },
         {
-          label: 'Lara Light Purple',
+          label: 'Light Purple',
           value: 'lara-light-purple',
         },
         {
-          label: 'Lara Dark Purple',
+          label: 'Dark Purple',
           value: 'lara-dark-purple',
         },
         {
-          label: 'Lara Light Blue',
+          label: 'Light Blue',
           value: 'lara-light-blue',
         },
         {
-          label: 'Lara Dark Blue',
+          label: 'Dark Blue',
           value: 'lara-dark-blue',
         },
         {
-          label: 'Lara Light Teal',
+          label: 'Light Teal',
           value: 'lara-light-teal',
         },
         {
-          label: 'Lara Dark Teal',
+          label: 'Dark Teal',
           value: 'lara-dark-teal',
         },
       ],

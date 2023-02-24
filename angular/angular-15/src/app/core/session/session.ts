@@ -1,5 +1,6 @@
+import { getItem, setItem } from "src/internal/aes-local-storage"
 import { getUnix, testAll, testAny, testNone } from "src/internal/utils"
-
+const Key = `sessionid`
 /**
  * 保存了與 session 關聯的用戶信息
  */
@@ -117,6 +118,54 @@ export class Token {
 
 
 export class Session {
+    /**
+     * 加載 session
+     */
+    static load(): Session | undefined {
+        const text = getItem(Key) ?? '';
+        if (text == '') {
+            return
+        }
+        const store: Store = JSON.parse(text)
+        let token = store.token
+        if (typeof token.access !== "string" ||
+            typeof token.refresh !== "string" ||
+            typeof token.accessDeadline !== "number" ||
+            typeof token.refreshDeadline !== "number" ||
+            typeof token.accessDeadline !== "number") {
+            return
+        }
+        token = new Token(token.access, token.refresh, token.accessDeadline, token.refreshDeadline, token.deadline)
+        if (token.expired && // 訪問 token 已經過期
+            ( // 無法刷新
+                token.deleted ||
+                !token.canRefresh
+            )) {
+            return
+        }
+        const userdata = store.userdata
+        const id = typeof userdata.id
+        // userdata 無效
+        if ((id !== "number" && id !== "string") ||
+            typeof userdata.name !== "string") {
+            return
+        }
+        return new Session(
+            token,
+            userdata,
+        )
+
+    }
+    /**
+     * 存儲 session
+     */
+    save() {
+        const text = JSON.stringify({
+            token: this.token,
+            userdata: this.userdata,
+        })
+        setItem(Key, text)
+    }
     constructor(
         readonly token: Token,
         readonly userdata: Userdata,
@@ -187,4 +236,8 @@ export class Session {
     groupAny(...vals: Array<number>): boolean {
         return testAny(this.userdata.groups, vals)
     }
+}
+interface Store {
+    userdata: Userdata
+    token: Token
 }

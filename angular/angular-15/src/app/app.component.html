@@ -2,7 +2,7 @@
 <link rel="stylesheet" [href]="theme">
 
 <!-- 主題菜單 -->
-<p-sidebar [(visible)]="themeSidebar" position="right" [style]="{width:'550px'}">
+<p-sidebar [(visible)]="themeSidebar" position="right" [style]="{width:'30rem'}">
   <div *ngFor="let theme of themes">
     <h4>{{theme.title}}</h4>
     <div class="grid">
@@ -25,7 +25,7 @@
             </p-button>
             <i class="text-primary text-xl pi pi-check-circle absolute top-0 right-0" *ngIf="isTheme(val.value)"></i>
           </div>
-          <div class="flex justify-content-center" style="font-size: 14px;">{{val.label}}</div>
+          <div class="flex justify-content-center" style="font-size: 0.875rem;">{{val.label}}</div>
         </ng-container>
       </div>
     </div>
@@ -77,10 +77,11 @@
 
       <!-- p-toolbar-group-end 指定工具欄結束位置 -->
       <div class="p-toolbar-group-end gap-2">
+
+
         <a routerLink="/about">
           <p-button icon="material-icons-outlined mi-info" [pTooltip]="i18nG.about|translate"></p-button>
         </a>
-
         <p-button icon="material-icons-outlined mi-style" [pTooltip]="i18nG.themes| translate"
           (onClick)="themeSidebar=!themeSidebar">
         </p-button>
