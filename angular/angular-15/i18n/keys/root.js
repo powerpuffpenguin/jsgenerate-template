@@ -19,6 +19,15 @@ module.exports = {
         notfound: i18n('npf', `404頁面提示信息
             Not Found: {{url}}
             頁面未找到: {{url}}`),
+        signin: i18n('in', `登入按鈕 文本提示
+            sign in
+            登入`),
+        signout: i18n('out', `登出按鈕 文本提示
+            sign out
+            登出`),
+        submit: i18n('st', `提交按鈕文本
+            submit
+            提交`),
     }),
     about: group(
         'ab',

@@ -9,6 +9,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { TooltipModule } from 'primeng/tooltip';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { DialogModule } from 'primeng/dialog';
 
 // import ngx-translate and the http loader
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -24,6 +25,7 @@ import { NotFoundComponent } from './app/not-found/not-found.component';
 import { HomeComponent } from './app/home/home.component';
 import { AboutComponent } from './app/about/about.component';
 import { MenuLanguageComponent } from './app/menu-language/menu-language.component';
+import { SigninComponent } from './app/signin/signin.component';
 
 export function HttpLoaderFactory(http: HttpClient, locationStrategy: LocationStrategy): TranslateHttpLoader {
   let url = locationStrategy.getBaseHref();
@@ -39,7 +41,8 @@ export function HttpLoaderFactory(http: HttpClient, locationStrategy: LocationSt
     NotFoundComponent,
     HomeComponent,
     AboutComponent,
-    MenuLanguageComponent
+    MenuLanguageComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
@@ -55,6 +58,7 @@ export function HttpLoaderFactory(http: HttpClient, locationStrategy: LocationSt
     }),
     ToolbarModule, ButtonModule, SidebarModule, TooltipModule,
     MessagesModule, MessageModule, MenuModule, CardModule,
+    DialogModule,
     AppRoutingModule
   ],
   providers: [],

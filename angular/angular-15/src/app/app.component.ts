@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { PrimeNGConfig } from 'primeng/api';
 import { SettingsService } from './core/settings.service';
@@ -7,8 +7,6 @@ import { i18n } from 'src/internal/i18n';
 import { ViewState } from 'src/internal/view';
 import { TitleService } from './core/title.service';
 import { environment } from 'src/environments/environment';
-import { BaseComponent } from 'src/internal/base-component';
-import { SessionService } from './core/session/session.service';
 import { Session } from './core/session/session';
 
 @Component({
@@ -16,7 +14,7 @@ import { Session } from './core/session/session';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent extends BaseComponent {
+export class AppComponent implements OnInit {
   env = environment
   i18nG = i18n.general
 
@@ -24,11 +22,9 @@ export class AppComponent extends BaseComponent {
   constructor(private primengConfig: PrimeNGConfig,
     private readonly settingsService: SettingsService,
     private readonly sanitizer: DomSanitizer,
-    private readonly sessionService: SessionService,
     translateService: TranslateService,
     titleService: TitleService
   ) {
-    super()
     this.theme = this.sanitizer.bypassSecurityTrustResourceUrl(`assets/themes/${settingsService.theme.value}/theme.css`)
     translateService.use(settingsService.lang.value)
     this.view.loader = async () => {
@@ -50,12 +46,6 @@ export class AppComponent extends BaseComponent {
     this.primengConfig.ripple = true;
     // 執行初始化
     this.view.get()
-
-    this.sessionService.stream.pipe(
-      this.takeUntilClosed()
-    ).subscribe((session) => {
-      this.session = session
-    })
   }
   theme: SafeResourceUrl
   themeSidebar = false // 主題側邊欄

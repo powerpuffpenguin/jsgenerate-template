@@ -1,32 +1,55 @@
-# 這裏包含一些比較通用的常規內容
+# 这里包含一些比较通用的常规内容
 g:
-  # 這是項目的主標題，將作爲默認標題顯示在瀏覽器的標題欄上
-  t: null
-  # 到主頁面的導航提示文本
+  # 这是项目的主标题，将作为默认标题显示在浏览器的标题栏上
+  t: 主页
+  # 到主页面的导航提示文本
   # Home Page
-  # 主頁
+  # 主页
   hp: 主页
-  # 到關於頁面的導航提示文本
+  # 到关于页面的导航提示文本
   # About Page
-  # 關於
+  # 关于
   ap: 关于
-  # 主題選擇的按鈕文本
+  # 主题选择的按钮文本
   # Themes
-  # 主題
+  # 主题
   ts: 主题
-  # 語言選擇按鈕文本
+  # 语言选择按钮文本
   # Languages
-  # 語言
+  # 语言
   ls: 语言
-  # 404頁面提示信息
+  # 404页面提示信息
   # Not Found: {{url}}
-  # 頁面未找到: {{url}}
+  # 页面未找到: {{url}}
   npf: '页面未找到: {{url}}'
-# 關於頁面
+  # 登入按钮 文本提示
+  # sign in
+  # 登入
+  in: 登入
+  # 登出按钮 文本提示
+  # sign out
+  # 登出
+  out: 登出
+  # 提交按钮文本
+  # submit
+  # 提交
+  st: 提交
+# 关于页面
 ab:
-  # 標題
+  # 标题
   # About
-  # 關於
-  t: null
-  # 關於頁面顯示的文本內容
-  c: null
+  # 关于
+  t: 关于
+  # 关于页面显示的文本内容
+  c: >-
+    <p>这是使用 <a target="_blank"
+    href="https://github.com/powerpuffpenguin/jsgenerate-template">jsgenerate</a>
+    生成的一个项目，它使用了 <a target="_blank"
+    href="https://github.com/powerpuffpenguin/jsgenerate-template">jsgenerate-template</a>
+    提供的模板</p>
+  
+    <p><a target="_blank"
+    href="https://github.com/powerpuffpenguin/jsgenerate-template">jsgenerate</a>
+    是一个用于自动生成程序代码的 node 工具，<a target="_blank"
+    href="https://github.com/powerpuffpenguin/jsgenerate-template">jsgenerate-template</a>
+    是官方提供的一些模板案例</p>

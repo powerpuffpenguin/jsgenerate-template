@@ -37,6 +37,24 @@ export const i18n = {
 		 * 頁面未找到: {{url}}
 		 */
 		notfound: 'g.npf',
+		/**
+		 * 登入按鈕 文本提示
+		 * sign in
+		 * 登入
+		 */
+		signin: 'g.in',
+		/**
+		 * 登出按鈕 文本提示
+		 * sign out
+		 * 登出
+		 */
+		signout: 'g.out',
+		/**
+		 * 提交按鈕文本
+		 * submit
+		 * 提交
+		 */
+		submit: 'g.st',
 	},
 	/**
 	 * 關於頁面

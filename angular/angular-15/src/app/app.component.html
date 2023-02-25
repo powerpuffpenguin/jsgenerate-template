@@ -60,37 +60,36 @@
       <div class="p-toolbar-group-start gap-2">
 
         <a routerLink="/">
-          <p-button icon="material-icons-outlined mi-home" [pTooltip]="i18nG.home |translate"></p-button>
+          <p-button icon="material-icons-outlined mi-home" [pTooltip]="i18nG.home |translate" tooltipPosition="bottom">
+          </p-button>
         </a>
 
         <!-- dev -->
         <a routerLink="/dev" *ngIf="!env.production">
-          <p-button icon="material-icons-outlined mi-api" pTooltip="Dev Page">
+          <p-button icon="material-icons-outlined mi-api" pTooltip="Dev Page" tooltipPosition="bottom">
           </p-button>
         </a>
-        <a routerLink="/404">
-          <p-button icon="material-icons-outlined mi-highlight_off" pTooltip="404 Page" styleClass="p-button-danger">
+        <a routerLink="/404" *ngIf="!env.production">
+          <p-button icon="material-icons-outlined mi-highlight_off" pTooltip="404 Page" styleClass="p-button-danger"
+            tooltipPosition="bottom">
           </p-button>
         </a>
-
+        <a routerLink="/about">
+          <p-button icon="material-icons-outlined mi-info" [pTooltip]="i18nG.about|translate" tooltipPosition="bottom">
+          </p-button>
+        </a>
       </div>
 
       <!-- p-toolbar-group-end 指定工具欄結束位置 -->
       <div class="p-toolbar-group-end gap-2">
-
-
-        <a routerLink="/about">
-          <p-button icon="material-icons-outlined mi-info" [pTooltip]="i18nG.about|translate"></p-button>
-        </a>
-        <p-button icon="material-icons-outlined mi-style" [pTooltip]="i18nG.themes| translate"
+        <p-button icon="material-icons-outlined mi-style" [pTooltip]="i18nG.themes| translate" tooltipPosition="bottom"
           (onClick)="themeSidebar=!themeSidebar">
         </p-button>
         <app-menu-language></app-menu-language>
+        <app-signin></app-signin>
       </div>
     </p-toolbar>
   </nav>
-
-
   <!-- 頁面正文 使用 margin-top 移動到工具欄下方 -->
   <div class="sticky top-0">
     <main>

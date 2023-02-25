@@ -1,6 +1,5 @@
 import { Component, OnDestroy } from "@angular/core";
 import { Observable, Subject, takeUntil } from 'rxjs';
-import { i18n } from "./i18n";
 export class ComponentClosedError extends Error { }
 
 /**
@@ -10,7 +9,6 @@ export class ComponentClosedError extends Error { }
     template: '',
 })
 export class BaseComponent implements OnDestroy {
-    readonly i18n = i18n
     private closed_ = false
     /**
      * 如果組件已關閉 返回 true

@@ -1,0 +1,20 @@
+<ng-container *ngIf="session;then sessionView;else signinView"></ng-container>
+<ng-template #sessionView>
+    session
+</ng-template>
+<ng-template #signinView>
+    <p-dialog [(visible)]="display" [modal]="true" [dismissableMask]="true">
+        <ng-template pTemplate="header">
+            {{i18nG.signin|translate}}
+        </ng-template>
+        Content
+
+        <ng-template pTemplate="footer">
+            <button type="button" pButton></button>
+        </ng-template>
+    </p-dialog>
+
+    <p-button icon="material-icons-outlined mi-login" [pTooltip]="i18nG.signin|translate" tooltipPosition="bottom"
+        (onClick)="display=true">
+    </p-button>
+</ng-template>

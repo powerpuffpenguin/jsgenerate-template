@@ -22,6 +22,18 @@ g:
   # Not Found: {{url}}
   # 頁面未找到: {{url}}
   npf: 'Not Found: {{url}}'
+  # 登入按鈕 文本提示
+  # sign in
+  # 登入
+  in: sign in
+  # 登出按鈕 文本提示
+  # sign out
+  # 登出
+  out: sign out
+  # 提交按鈕文本
+  # submit
+  # 提交
+  st: submit
 # 關於頁面
 ab:
   # 標題
