@@ -2,8 +2,7 @@
 <link rel="stylesheet" [href]="theme">
 
 <!-- 主題菜單 -->
-<p-sidebar styleClass="simple-sidebar" [(visible)]="themeSidebar" position="right" [style]="{width:'30rem'}"
-  [showCloseIcon]="false">
+<p-sidebar styleClass="header-sidebar" [(visible)]="themeSidebar" position="right" [style]="{width:sidebar.width}">
   <div *ngFor="let theme of themes">
     <h4>{{theme.title}}</h4>
     <div class="grid">
@@ -26,7 +25,7 @@
             </p-button>
             <i class="text-primary text-xl pi pi-check-circle absolute top-0 right-0" *ngIf="isTheme(val.value)"></i>
           </div>
-          <div class="flex justify-content-center" style="font-size: 0.875rem;">{{val.label}}</div>
+          <div class="flex justify-content-center" [style]="sidebar.fontsize">{{val.label}}</div>
         </ng-container>
       </div>
     </div>

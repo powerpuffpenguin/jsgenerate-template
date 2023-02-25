@@ -68,6 +68,18 @@ export class AppComponent implements OnInit {
   isTheme(theme: string) {
     return this.settingsService.theme.value == theme
   }
+  get sidebar(): { width: string, fontsize: string } {
+    if (document.body.clientWidth > 500) {
+      return {
+        width: "30rem",
+        fontsize: "font-size: 0.875rem;",
+      }
+    }
+    return {
+      width: "24rem",
+      fontsize: "font-size: 0.7rem;",
+    }
+  }
 }
 
 const Themes: Array<{
