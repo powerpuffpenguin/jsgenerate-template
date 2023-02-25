@@ -120,7 +120,26 @@ body {
     color: var(--text-color);
 }
 
-// 去掉 link button 的下劃線
+
+
+/* 一些微調效果 */
+// 去掉 link button 的下劃線，因爲
 a {
     text-decoration: none;
+}
+
+// 隱藏 sidebar 的 header 和 footer，因爲 primeng 即使 header footer 沒有內容也會佔用空間
+.simple-sidebar>.p-sidebar-header,
+.p-sidebar-footer {
+    display: none;
+}
+
+// 隱藏 sidebar 的 header，因爲 primeng 即使 header 沒有內容也會佔用空間
+.header-sidebar>.p-sidebar-footer {
+    display: none;
+}
+
+// 隱藏 sidebar 的 header，因爲 primeng 即使 footer 沒有內容也會佔用空間
+.simple-sidebar>.p-sidebar-header {
+    display: none;
 }

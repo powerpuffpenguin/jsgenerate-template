@@ -23,13 +23,19 @@ export class AppComponent implements OnInit {
     private readonly settingsService: SettingsService,
     private readonly sanitizer: DomSanitizer,
     translateService: TranslateService,
-    titleService: TitleService
+    config: PrimeNGConfig,
+    titleService: TitleService,
   ) {
     this.theme = this.sanitizer.bypassSecurityTrustResourceUrl(`assets/themes/${settingsService.theme.value}/theme.css`)
     translateService.use(settingsService.lang.value)
     this.view.loader = async () => {
       new Promise<void>((resove) => {
         let first = true
+        // 設置 primeng
+        translateService.stream('primeng').subscribe((val) => {
+          config.setTranslation(val)
+        })
+        // 設置標題
         translateService.stream(i18n.general.title).subscribe((val) => {
           titleService.defaultTitle = val
           if (first) {
@@ -66,7 +72,7 @@ export class AppComponent implements OnInit {
 
 const Themes: Array<{
   title: string
-  values?: Array<{
+  values: Array<{
     value: string
     label: string
     svg?: string

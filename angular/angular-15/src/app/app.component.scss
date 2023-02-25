@@ -4,15 +4,6 @@
     padding-right: 0.75rem;
 }
 
-img {
-    transition-duration: 100ms;
-    transition-timing-function: linear;
-}
-
-img:hover {
-    transform: scale(1.1);
-}
-
 svg {
     width: 3.625rem;
     height: 3.625rem;
@@ -22,4 +13,8 @@ svg {
 
 svg:hover {
     transform: scale(1.1);
+}
+
+.p-sidebar-header {
+    display: none;
 }

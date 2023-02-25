@@ -1,5 +1,6 @@
 const { group, i18n } = require('@king011/ngx-translate-id');
 module.exports = {
+    primeng: group(require('./primeng')),
     general: group(
         'g',
         '這裏包含一些比較通用的常規內容', {

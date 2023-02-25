@@ -2,7 +2,8 @@
 <link rel="stylesheet" [href]="theme">
 
 <!-- 主題菜單 -->
-<p-sidebar [(visible)]="themeSidebar" position="right" [style]="{width:'30rem'}">
+<p-sidebar styleClass="simple-sidebar" [(visible)]="themeSidebar" position="right" [style]="{width:'30rem'}"
+  [showCloseIcon]="false">
   <div *ngFor="let theme of themes">
     <h4>{{theme.title}}</h4>
     <div class="grid">
@@ -33,7 +34,7 @@
 </p-sidebar>
 
 
-<div class="view" [ngSwitch]="view.state">
+<div [ngSwitch]="view.state">
   <ng-template ngSwitchCase="load">
     <div style="text-align: center; margin-top: 4rem;">
       <i class="pi pi-spin pi-spinner" style="font-size: 8rem;"></i>
@@ -53,7 +54,7 @@
 </div>
 <ng-template #okView>
   <!-- 保持頂部工具欄始終在屏幕最上方 -->
-  <nav class="sticky top-0 z-5">
+  <nav class="sticky top-0" style="z-index: 1;">
     <!-- 工具欄 -->
     <p-toolbar>
       <!-- p-toolbar-group-start 指定工具欄開始位置 -->

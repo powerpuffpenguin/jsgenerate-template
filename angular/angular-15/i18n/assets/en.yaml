@@ -1,3 +1,94 @@
+primeng:
+  # Starts with
+  startsWith: Starts with
+  # Contains
+  contains: Contains
+  # Not contains
+  notContains: Not contains
+  # Ends with
+  endsWith: Ends with
+  # Equals
+  equals: Equals
+  # Not equals
+  notEquals: Not equals
+  # No Filter
+  noFilter: No Filter
+  # Less than
+  lt: Less than
+  # Less than or equal to
+  lte: Less than or equal to
+  # Greater than
+  gt: Greater than
+  # Greater than or equal to
+  gte: Greater than or equal to
+  # Is
+  is: Is
+  # Is not
+  isNot: Is not
+  # Before
+  before: Before
+  # After
+  after: After
+  # Date is
+  dateIs: Date is
+  # Date is not
+  dateIsNot: Date is not
+  # Date is before
+  dateBefore: Date is before
+  # Date is after
+  dateAfter: Date is after
+  # Clear
+  clear: Clear
+  # Apply
+  apply: Apply
+  # Match All
+  matchAll: Match All
+  # Match Any
+  matchAny: Match Any
+  # Add Rule
+  addRule: Add Rule
+  # Remove Rule
+  removeRule: Remove Rule
+  # Yes
+  accept: 'Yes'
+  # No
+  reject: 'No'
+  # Choose
+  choose: Choose
+  # Upload
+  upload: Upload
+  # Cancel
+  cancel: Cancel
+  # ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+  # ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+  dayNamesShort: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+  # ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+  dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"]
+  # ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  monthNames: ["January","February","March","April","May","June","July","August","September","October","November","December"]
+  # ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  monthNamesShort: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+  # mm/dd/yy
+  dateFormat: mm/dd/yy
+  # 0
+  firstDayOfWeek: '0'
+  # Today
+  today: Today
+  # Wk
+  weekHeader: Wk
+  # Weak
+  weak: Weak
+  # Medium
+  medium: Medium
+  # Strong
+  strong: Strong
+  # Enter a password
+  passwordPrompt: Enter a password
+  # No results found
+  emptyMessage: No results found
+  # No results found
+  emptyFilterMessage: No results found
 # 這裏包含一些比較通用的常規內容
 g:
   # 這是項目的主標題，將作爲默認標題顯示在瀏覽器的標題欄上

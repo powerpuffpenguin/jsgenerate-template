@@ -1,46 +1,137 @@
-# 这里包含一些比较通用的常规内容
+primeng:
+  # Starts with
+  startsWith: 以之开始
+  # Contains
+  contains: 包含
+  # Not contains
+  notContains: 不包含
+  # Ends with
+  endsWith: 以之结尾
+  # Equals
+  equals: 相等
+  # Not equals
+  notEquals: 不相等
+  # No Filter
+  noFilter: 过滤
+  # Less than
+  lt: 小于
+  # Less than or equal to
+  lte: 小于等于
+  # Greater than
+  gt: 大于
+  # Greater than or equal to
+  gte: 大于等于
+  # Is
+  is: 是
+  # Is not
+  isNot: 不是
+  # Before
+  before: 之后
+  # After
+  after: 之前
+  # Date is
+  dateIs: 日期是
+  # Date is not
+  dateIsNot: 日期不是
+  # Date is before
+  dateBefore: 之后的日期
+  # Date is after
+  dateAfter: 之前的日期
+  # Clear
+  clear: 清除
+  # Apply
+  apply: 应用
+  # Match All
+  matchAll: 全部匹配
+  # Match Any
+  matchAny: 任意匹配
+  # Add Rule
+  addRule: 增加规则
+  # Remove Rule
+  removeRule: 移除规则
+  # Yes
+  accept: 接收
+  # No
+  reject: 拒绝
+  # Choose
+  choose: 选择
+  # Upload
+  upload: 上传
+  # Cancel
+  cancel: 取消
+  # ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  dayNames: ["星期天","星期一","星期二","星期三","星期四","星期五","星期六"]
+  # ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+  dayNamesShort: ["周日","周一","周二","周三","周四","周五","周六"]
+  # ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+  dayNamesMin: ["周日","周一","周二","周三","周四","周五","周六"]
+  # ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  monthNames: ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"]
+  # ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  monthNamesShort: ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"]
+  # mm/dd/yy
+  dateFormat: yyyy/mm/dd
+  # 0
+  firstDayOfWeek: 1
+  # Today
+  today: 今天
+  # Wk
+  weekHeader: 周
+  # Weak
+  weak: 星期
+  # Medium
+  medium: 中等
+  # Strong
+  strong: 强
+  # Enter a password
+  passwordPrompt: 输入密码
+  # No results found
+  emptyMessage: 没有数据
+  # No results found
+  emptyFilterMessage: 没有匹配的数据
+# 這裏包含一些比較通用的常規內容
 g:
-  # 这是项目的主标题，将作为默认标题显示在浏览器的标题栏上
+  # 這是項目的主標題，將作爲默認標題顯示在瀏覽器的標題欄上
   t: 主页
-  # 到主页面的导航提示文本
+  # 到主頁面的導航提示文本
   # Home Page
-  # 主页
+  # 主頁
   hp: 主页
-  # 到关于页面的导航提示文本
+  # 到關於頁面的導航提示文本
   # About Page
-  # 关于
+  # 關於
   ap: 关于
-  # 主题选择的按钮文本
+  # 主題選擇的按鈕文本
   # Themes
-  # 主题
+  # 主題
   ts: 主题
-  # 语言选择按钮文本
+  # 語言選擇按鈕文本
   # Languages
-  # 语言
+  # 語言
   ls: 语言
-  # 404页面提示信息
+  # 404頁面提示信息
   # Not Found: {{url}}
-  # 页面未找到: {{url}}
+  # 頁面未找到: {{url}}
   npf: '页面未找到: {{url}}'
-  # 登入按钮 文本提示
+  # 登入按鈕 文本提示
   # sign in
   # 登入
   in: 登入
-  # 登出按钮 文本提示
+  # 登出按鈕 文本提示
   # sign out
   # 登出
   out: 登出
-  # 提交按钮文本
+  # 提交按鈕文本
   # submit
   # 提交
   st: 提交
-# 关于页面
+# 關於頁面
 ab:
-  # 标题
+  # 標題
   # About
-  # 关于
+  # 關於
   t: 关于
-  # 关于页面显示的文本内容
+  # 關於頁面顯示的文本內容
   c: >-
     <p>这是使用 <a target="_blank"
     href="https://github.com/powerpuffpenguin/jsgenerate-template">jsgenerate</a>
